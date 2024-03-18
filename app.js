@@ -5,12 +5,19 @@ let paragrafo= document.querySelector('p')
 paragrafo.innerHTML='Escolha um numero entre 1 e 10'
 
 */
+let listaNumerosSorteados=[]
 mensagemIncial()
 let numeroSort = aleatorio()
 let tentativas = 1
 let numero
 function aleatorio() {
-    return parseInt(Math.random() * 10 + 1)
+    let numeroEscolhido=parseInt(Math.random() * 10 + 1)
+    if(listaNumerosSorteados.includes(numeroEscolhido)){
+        return aleatorio();    
+    }else{
+        listaNumerosSorteados.push(numeroEscolhido);
+        return numeroEscolhido;
+    }
 }
 
 function exibirNaTela(tag, texto) {
