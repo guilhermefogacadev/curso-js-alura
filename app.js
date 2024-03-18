@@ -7,11 +7,13 @@ paragrafo.innerHTML='Escolha um numero entre 1 e 10'
 */
 let listaNumerosSorteados=[]
 mensagemIncial()
+let numeroMaximo=10;
 let numeroSort = aleatorio()
 let tentativas = 1
 let numero
 function aleatorio() {
-    let numeroEscolhido=parseInt(Math.random() * 10 + 1)
+    let numeroEscolhido=parseInt(Math.random() * numeroMaximo + 1)
+    if(listaNumerosSorteados.length==numeroMaximo){listaNumerosSorteados=[]}
     if(listaNumerosSorteados.includes(numeroEscolhido)){
         return aleatorio();    
     }else{
